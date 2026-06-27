@@ -1,0 +1,1318 @@
+/* =========================================== */
+/* ESTILOS ESPECÍFICOS PARA NEGOCIOS Y MERCADOTECNIA */
+/* =========================================== */
+
+/* === VARIABLES EMPRESARIALES === */
+:root {
+    --negocios-primary: #2c348f;       /* Azul corporativo */
+    --negocios-secondary: #21b395;     /* Verde crecimiento */
+    --negocios-accent: #ff6b35;        /* Naranja energía */
+    --negocios-dark: #1a1d3a;          /* Azul oscuro */
+    --negocios-light: #f8f9fa;         /* Fondo claro */
+    --negocios-gradient: linear-gradient(135deg, var(--negocios-primary), var(--negocios-accent));
+    --negocios-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === HERO SECTION EMPRESARIAL === */
+.negocios-hero {
+    background: linear-gradient(135deg, var(--negocios-dark) 0%, #2c348f 50%, #1a1d3a 100%);
+    color: white;
+    /* padding: 120px 0 80px; */
+    padding: 75px 0 80px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.negocios-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(44, 52, 143, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.negocios-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.negocios-main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.negocios-title-line {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.negocios-title-highlight {
+    display: block;
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.negocios-title-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 4px;
+    background: var(--negocios-gradient);
+    border-radius: 2px;
+}
+
+.negocios-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 2rem 0;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.negocios-area {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--negocios-accent);
+    margin-top: 0.5rem;
+}
+
+.negocios-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    margin: 2rem auto;
+    font-size: 1.1rem;
+    transition: var(--negocios-transition);
+    max-width: 400px;
+}
+
+.negocios-hero-badge:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.negocios-hero-badge i {
+    color: var(--negocios-accent);
+    font-size: 1.5rem;
+}
+
+.negocios-hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.negocios-stat {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    min-width: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--negocios-transition);
+}
+
+.negocios-stat:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: var(--negocios-accent);
+}
+
+.negocios-stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--negocios-accent);
+    margin-bottom: 0.5rem;
+}
+
+.negocios-stat-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Elementos empresariales decorativos */
+.negocios-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.negocios-chart {
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    width: 150px;
+    height: 80px;
+    border-left: 2px solid rgba(255, 107, 53, 0.5);
+    border-bottom: 2px solid rgba(255, 107, 53, 0.5);
+}
+
+.chart-line {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    height: 2px;
+    width: 150px;
+}
+
+.chart-line:nth-child(1) { top: 0; }
+.chart-line:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.chart-line:nth-child(3) { bottom: 0; }
+
+.chart-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--negocios-accent);
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+    animation: chart-point 3s infinite ease-in-out;
+}
+
+.negocios-briefcase {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    font-size: 3rem;
+    color: rgba(33, 179, 149, 0.3);
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes chart-point {
+    0%, 100% { transform: translate(-50%, 50%) scale(1); }
+    50% { transform: translate(-50%, 50%) scale(1.3); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* Scroll indicator */
+.negocios-scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.negocios-arrow {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.negocios-arrow i {
+    color: var(--negocios-accent);
+    animation: bounce-arrow 2s infinite;
+}
+
+@keyframes bounce-arrow {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* === BANNER EMPRESARIAL === */
+.negocios-banner {
+    padding: 0;
+    background: white;
+}
+
+.negocios-banner-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.negocios-banner-image {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.negocios-banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.negocios-banner-image:hover img {
+    transform: scale(1.05);
+}
+
+.negocios-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(44, 52, 143, 0.8), rgba(255, 107, 53, 0.6));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.negocios-banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.negocios-banner-word {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+}
+
+.negocios-banner-word:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: white;
+}
+
+.negocios-banner-info {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.negocios-info-card {
+    background: var(--negocios-primary);
+    color: white;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.negocios-info-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--negocios-accent);
+}
+
+.negocios-info-card h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.negocios-info-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* === SECCIÓN DE DESCRIPCIÓN === */
+.negocios-desc-section {
+    padding: 80px 0;
+    background: var(--negocios-light);
+}
+
+.negocios-desc-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.negocios-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.negocios-section-header h2 {
+    color: var(--negocios-primary);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.negocios-section-header h2 i {
+    color: var(--negocios-accent);
+}
+
+.negocios-section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    line-height: 1.4;
+}
+
+.negocios-section-line {
+    width: 100px;
+    height: 4px;
+    background: var(--negocios-gradient);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.negocios-desc-text {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.negocios-intro {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.negocios-intro strong {
+    color: var(--negocios-primary);
+}
+
+.negocios-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.negocios-feature {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: var(--negocios-transition);
+    border: 2px solid transparent;
+}
+
+.negocios-feature:hover {
+    border-color: var(--negocios-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.15);
+}
+
+.negocios-feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--negocios-primary), var(--negocios-accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.negocios-feature-icon i {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.negocios-feature h4 {
+    color: var(--negocios-primary);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.negocios-feature p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* === SECCIÓN PRINCIPAL === */
+.negocios-main-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.negocios-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+/* Cards generales */
+.negocios-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.negocios-card-header {
+    background: linear-gradient(135deg, var(--negocios-primary), var(--negocios-secondary));
+    color: white;
+    padding: 1.5rem 2rem;
+    position: relative;
+}
+
+.negocios-card-header h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.negocios-card-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.negocios-card-line {
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    width: 60px;
+    height: 3px;
+    background: var(--negocios-accent);
+}
+
+.negocios-card-body {
+    padding: 2rem;
+}
+
+/* Competencias */
+.negocios-comp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.negocios-comp-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: var(--negocios-transition);
+    border-left: 4px solid transparent;
+}
+
+.negocios-comp-item:hover {
+    border-left-color: var(--negocios-accent);
+    transform: translateX(5px);
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.negocios-comp-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--negocios-primary), var(--negocios-accent));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.negocios-comp-icon i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.negocios-comp-content h4 {
+    color: var(--negocios-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.negocios-comp-content p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Perfil */
+.negocios-perfil-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.negocios-perfil-box {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 2rem;
+    height: 100%;
+    border: 2px solid #e9ecef;
+    transition: var(--negocios-transition);
+}
+
+.negocios-perfil-box:hover {
+    border-color: var(--negocios-accent);
+    transform: translateY(-5px);
+}
+
+.negocios-perfil-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--negocios-primary);
+}
+
+.negocios-perfil-header i {
+    font-size: 1.5rem;
+    color: var(--negocios-accent);
+}
+
+.negocios-perfil-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.negocios-perfil-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.negocios-perfil-list li {
+    padding: 0.8rem 0;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.negocios-perfil-list li:last-child {
+    border-bottom: none;
+}
+
+.negocios-check {
+    color: var(--negocios-accent);
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+/* === SIDEBAR === */
+.negocios-sidebar-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.negocios-sidebar-header {
+    background: var(--negocios-primary);
+    color: white;
+    padding: 1.2rem 1.5rem;
+}
+
+.negocios-sidebar-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.negocios-sidebar-content {
+    padding: 1.5rem;
+}
+
+/* Info items */
+.negocios-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.negocios-info-item:last-child {
+    border-bottom: none;
+}
+
+.negocios-info-icon {
+    color: var(--negocios-accent);
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.negocios-info-details {
+    flex: 1;
+}
+
+.negocios-info-details strong {
+    color: var(--negocios-primary);
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.negocios-info-details span {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
+}
+
+.negocios-info-details span:last-child {
+    margin-bottom: 0;
+}
+
+/* Campo de trabajo */
+.negocios-campo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.negocios-campo-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: var(--negocios-transition);
+}
+
+.negocios-campo-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.negocios-campo-item i {
+    color: var(--negocios-accent);
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.negocios-campo-item span {
+    color: #555;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+/* Puestos de trabajo */
+.negocios-puestos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.8rem;
+}
+
+.negocios-puesto-badge {
+    background: linear-gradient(135deg, #f0f8ff, #fff0f0);
+    color: var(--negocios-primary);
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-align: center;
+    font-weight: 500;
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    transition: var(--negocios-transition);
+    cursor: default;
+}
+
+.negocios-puesto-badge:hover {
+    background: linear-gradient(135deg, var(--negocios-primary), var(--negocios-accent));
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(44, 52, 143, 0.2);
+}
+
+/* Habilidades */
+.negocios-habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.8rem;
+}
+
+.negocios-habilidad-badge {
+    background: rgba(33, 179, 149, 0.1);
+    color: var(--negocios-secondary);
+    padding: 0.5rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid rgba(33, 179, 149, 0.2);
+    transition: var(--negocios-transition);
+}
+
+.negocios-habilidad-badge:hover {
+    background: var(--negocios-secondary);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* CTA Card */
+.negocios-cta-card {
+    background: linear-gradient(135deg, var(--negocios-primary), var(--negocios-accent));
+    color: white;
+    text-align: center;
+}
+
+.negocios-cta-content {
+    padding: 2rem 1.5rem;
+}
+
+.negocios-cta-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.negocios-cta-content h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.negocios-cta-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.negocios-cta-button {
+    display: inline-block;
+    background: white;
+    color: var(--negocios-primary);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: var(--negocios-transition);
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.negocios-cta-button:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Plan de estudios */
+.negocios-plan-card {
+    background: white;
+}
+
+.negocios-plan-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.negocios-plan-content h4 {
+    color: var(--negocios-primary);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.negocios-plan-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.negocios-plan-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--negocios-primary), var(--negocios-secondary));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--negocios-transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.negocios-plan-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(44, 52, 143, 0.3);
+}
+
+/* === SECCIÓN DE ÁREAS DE DESEMPEÑO === */
+.negocios-areas-section {
+    padding: 80px 0;
+    background: var(--negocios-light);
+}
+
+.negocios-areas-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.negocios-areas-header h2 {
+    color: var(--negocios-primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.negocios-areas-header h2 i {
+    color: var(--negocios-accent);
+}
+
+.negocios-areas-header p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.negocios-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.negocios-area-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--negocios-transition);
+    border: 2px solid transparent;
+}
+
+.negocios-area-card:hover {
+    border-color: var(--negocios-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.negocios-area-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--negocios-primary), var(--negocios-accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.negocios-area-icon i {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.negocios-area-card h4 {
+    color: var(--negocios-primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.negocios-area-card p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* === SECCIÓN DE BENEFICIOS === */
+.negocios-benefits-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.negocios-benefits-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.negocios-benefits-text h3 {
+    color: var(--negocios-primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.negocios-benefits-text h3 i {
+    color: var(--negocios-accent);
+}
+
+.negocios-benefits-text p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.negocios-benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.negocios-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.negocios-benefit i {
+    color: var(--negocios-accent);
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.negocios-benefit-content h4 {
+    color: var(--negocios-primary);
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+}
+
+.negocios-benefit-content p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.negocios-benefits-image {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.negocios-benefits-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.8s ease;
+}
+
+.negocios-benefits-image:hover img {
+    transform: scale(1.03);
+}
+
+.negocios-benefits-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(44, 52, 143, 0.8), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.negocios-benefits-overlay h4 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1200px) {
+    .negocios-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .negocios-main-title {
+        font-size: 2.5rem;
+    }
+    
+    .negocios-title-highlight {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .negocios-banner-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .negocios-hero {
+        min-height: auto;
+        padding: 100px 0 60px;
+    }
+    
+    .negocios-benefits-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .negocios-benefits-image {
+        order: -1;
+    }
+    
+    .negocios-section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .negocios-areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .negocios-main-title {
+        font-size: 2rem;
+    }
+    
+    .negocios-title-highlight {
+        font-size: 2.2rem;
+    }
+    
+    .negocios-title-highlight::after {
+        width: 150px;
+    }
+    
+    .negocios-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .negocios-hero-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .negocios-hero-badge {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .negocios-banner-image {
+        height: 300px;
+    }
+    
+    .negocios-banner-word {
+        font-size: 1.8rem;
+    }
+    
+    .negocios-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .negocios-comp-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .negocios-perfil-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .negocios-areas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .negocios-puestos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    
+    .negocios-desc-text {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .negocios-main-title {
+        font-size: 1.6rem;
+    }
+    
+    .negocios-title-highlight {
+        font-size: 1.8rem;
+    }
+    
+    .negocios-title-line {
+        font-size: 1.2rem;
+    }
+    
+    .negocios-banner-image {
+        height: 250px;
+    }
+    
+    .negocios-banner-word {
+        font-size: 1.5rem;
+    }
+    
+    .negocios-section-header h2 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .negocios-puestos-grid,
+    .negocios-habilidades-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .negocios-card-body,
+    .negocios-sidebar-content {
+        padding: 1.5rem;
+    }
+    
+    .negocios-comp-item,
+    .negocios-perfil-box,
+    .negocios-campo-item,
+    .negocios-area-card {
+        padding: 1.2rem;
+    }
+}
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.negocios-hero-content,
+.negocios-desc-text,
+.negocios-card,
+.negocios-sidebar-card,
+.negocios-area-card,
+.negocios-benefit {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.negocios-hero-content { animation-delay: 0.1s; }
+.negocios-desc-text { animation-delay: 0.2s; }
+.negocios-card:nth-child(1) { animation-delay: 0.3s; }
+.negocios-card:nth-child(2) { animation-delay: 0.4s; }
+.negocios-sidebar-card:nth-child(1) { animation-delay: 0.5s; }
+.negocios-sidebar-card:nth-child(2) { animation-delay: 0.6s; }
+
+/* Efecto de scroll reveal */
+.negocios-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.negocios-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

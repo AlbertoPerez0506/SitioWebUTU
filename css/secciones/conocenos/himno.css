@@ -1,0 +1,1977 @@
+/* =========================================== */
+/* ESTILOS ESPECÍFICOS PARA HIMNO */
+/* =========================================== */
+
+/* === VARIABLES MUSICALES === */
+:root {
+    --himno-primary: #4a148c;          /* Púrpura institucional */
+    --himno-secondary: #7b1fa2;        /* Púrpura claro */
+    --himno-accent: #ff9800;           /* Naranja musical */
+    --himno-gold: #ffd700;             /* Dorado elegancia */
+    --himno-dark: #311b92;             /* Púrpura oscuro */
+    --himno-light: #f3e5f5;            /* Púrpura muy claro */
+    --himno-silver: #e0e0e0;           /* Plata detalles */
+    --himno-gradient: linear-gradient(135deg, var(--himno-primary), var(--himno-secondary));
+    --himno-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --himno-shadow: 0 10px 30px rgba(74, 20, 140, 0.15);
+    --himno-glow: 0 0 20px rgba(123, 31, 162, 0.3);
+}
+
+/* === HERO SECTION HIMNO === */
+.himno-hero {
+    background: linear-gradient(135deg, 
+        #1a1a2e 0%, 
+        var(--himno-dark) 50%, 
+        var(--himno-primary) 100%);
+    color: white;
+    /* padding: 140px 0 100px; */
+    padding: 55px 0 100px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.himno-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ff9800" opacity="0.1"><path d="M50,20 C70,40 70,60 50,80 C30,60 30,40 50,20 Z"/></svg>'),
+        radial-gradient(circle at 20% 30%, rgba(123, 31, 162, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 152, 0, 0.1) 0%, transparent 50%);
+    background-size: 200px 200px, auto, auto;
+    z-index: 1;
+}
+
+.himno-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.himno-main-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.himno-title-line {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.himno-title-highlight {
+    display: block;
+    font-size: 4rem;
+    color: var(--himno-gold);
+    position: relative;
+    padding: 1rem 0;
+    animation: title-sparkle 3s ease-in-out infinite;
+}
+
+@keyframes title-sparkle {
+    0%, 100% { 
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); 
+    }
+    50% { 
+        text-shadow: 0 0 30px rgba(255, 152, 0, 0.8),
+                     0 0 40px rgba(255, 215, 0, 0.4); 
+    }
+}
+
+.himno-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 2rem 0;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.himno-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--himno-accent), 
+        transparent);
+}
+
+.himno-badge {
+    display: block;
+    background: rgba(255, 152, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 152, 0, 0.3);
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    display: inline-block;
+    color: var(--himno-accent);
+}
+
+.himno-hero-message {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    margin: 2.5rem auto;
+    font-size: 1.2rem;
+    transition: var(--himno-transition);
+    max-width: 500px;
+    animation: float-message 4s ease-in-out infinite;
+}
+
+@keyframes float-message {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.himno-hero-message:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.himno-hero-message i {
+    color: var(--himno-accent);
+    font-size: 1.8rem;
+}
+
+/* Stats del hero */
+.himno-hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.himno-stat {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    min-width: 150px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--himno-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.himno-stat::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent, 
+        rgba(255, 152, 0, 0.1), 
+        transparent);
+    transform: rotate(45deg);
+    transition: var(--himno-transition);
+}
+
+.himno-stat:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-8px);
+    border-color: var(--himno-accent);
+    box-shadow: var(--himno-glow);
+}
+
+.himno-stat:hover::before {
+    left: 100%;
+}
+
+.himno-stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--himno-gold);
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.himno-stat-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Elementos musicales decorativos */
+.himno-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.himno-clef {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    font-size: 5rem;
+    color: rgba(255, 152, 0, 0.2);
+    animation: spin-clef 20s linear infinite;
+}
+
+@keyframes spin-clef {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.himno-notes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.note {
+    position: absolute;
+    font-size: 3rem;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+    animation: note-float 8s ease-in-out infinite;
+}
+
+.note:nth-child(1) { animation-delay: 0s; }
+.note:nth-child(2) { animation-delay: 2s; }
+.note:nth-child(3) { animation-delay: 4s; }
+.note:nth-child(4) { animation-delay: 6s; }
+
+@keyframes note-float {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.6;
+    }
+    50% { 
+        transform: translateY(-30px) rotate(15deg);
+        opacity: 1;
+    }
+}
+
+/* Scroll indicator */
+.himno-scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    z-index: 2;
+    animation: bounce-scroll 2s infinite;
+}
+
+.himno-arrow {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 152, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.himno-arrow i {
+    color: var(--himno-accent);
+    animation: bounce-arrow 2s infinite;
+}
+
+@keyframes bounce-arrow {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
+}
+
+@keyframes bounce-scroll {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* === BANNER DE HIMNO === */
+.himno-banner {
+    padding: 0;
+    background: white;
+}
+
+.himno-banner-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.himno-banner-image {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: var(--himno-shadow);
+}
+
+.himno-banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.8s ease;
+}
+
+.himno-banner-image:hover img {
+    transform: scale(1.05);
+}
+
+.himno-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(74, 20, 140, 0.8) 0%, 
+        rgba(255, 152, 0, 0.6) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.himno-banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.himno-banner-word {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: word-glow 3s infinite ease-in-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.himno-banner-word:nth-child(1) { animation-delay: 0s; }
+.himno-banner-word:nth-child(2) { animation-delay: 1s; }
+.himno-banner-word:nth-child(3) { animation-delay: 2s; }
+
+@keyframes word-glow {
+    0%, 100% { 
+        transform: translateY(0) scale(1);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    50% { 
+        transform: translateY(-20px) scale(1.05);
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.himno-banner-info {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.himno-info-card {
+    background: var(--himno-primary);
+    color: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    box-shadow: var(--himno-shadow);
+    transition: var(--himno-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.himno-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        transparent 70%);
+    transform: translateX(-100%);
+    transition: var(--himno-transition);
+}
+
+.himno-info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(74, 20, 140, 0.3);
+}
+
+.himno-info-card:hover::before {
+    transform: translateX(100%);
+}
+
+.himno-info-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    color: var(--himno-accent);
+    border: 2px solid rgba(255, 152, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.himno-info-card h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.himno-info-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.himno-author-tag {
+    background: rgba(255, 152, 0, 0.2);
+    color: var(--himno-accent);
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 152, 0, 0.3);
+    backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 1;
+}
+
+/* === SECCIÓN PRINCIPAL === */
+.himno-main-section {
+    padding: 80px 0;
+    background: var(--himno-light);
+}
+
+.himno-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+/* Cards generales */
+.himno-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--himno-shadow);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+    transition: var(--himno-transition);
+}
+
+.himno-card:hover {
+    box-shadow: 0 15px 40px rgba(74, 20, 140, 0.2);
+    transform: translateY(-5px);
+}
+
+.himno-card-header {
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-dark));
+    color: white;
+    padding: 1.5rem 2rem;
+    position: relative;
+}
+
+.himno-card-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--himno-accent), 
+        var(--himno-gold));
+}
+
+.himno-card-header h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.himno-card-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.himno-card-body {
+    padding: 2rem;
+}
+
+/* Reproductor de Audio */
+.himno-player-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.track-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--himno-light);
+}
+
+.track-image {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-accent));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    box-shadow: 0 5px 15px rgba(74, 20, 140, 0.3);
+}
+
+.track-details h4 {
+    color: var(--himno-dark);
+    margin-bottom: 0.3rem;
+    font-size: 1.3rem;
+}
+
+.track-details p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Barra de progreso */
+.progress-container {
+    margin: 1rem 0;
+}
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--himno-dark);
+}
+
+.time-current {
+    color: var(--himno-primary);
+}
+
+.time-total {
+    color: #666;
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--himno-light);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-accent));
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.progress-handle {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 3px solid var(--himno-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.progress-bar:hover .progress-handle {
+    opacity: 1;
+}
+
+/* Controles */
+.player-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.main-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.secondary-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.volume-slider-container {
+    width: 100px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--himno-transition);
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.volume-control:hover .volume-slider-container {
+    opacity: 1;
+    visibility: visible;
+}
+
+.volume-slider {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--himno-light);
+    border-radius: 3px;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--himno-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.control-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    border: none;
+    background: var(--himno-light);
+    color: var(--himno-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--himno-transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: var(--himno-primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(74, 20, 140, 0.3);
+}
+
+.control-btn.play-btn {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-accent));
+    color: white;
+    font-size: 1.5rem;
+}
+
+.control-btn.play-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Estado del reproductor */
+.player-status {
+    background: rgba(243, 229, 245, 0.5);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 2px solid rgba(123, 31, 162, 0.1);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--himno-accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(255, 152, 0, 0);
+    }
+}
+
+#statusText {
+    color: var(--himno-dark);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.player-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.info-item i {
+    color: var(--himno-primary);
+}
+
+.info-item strong {
+    color: var(--himno-dark);
+}
+
+/* Controles de Visualización */
+.display-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.toggle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--himno-light);
+}
+
+.toggle-header h4 {
+    color: var(--himno-dark);
+    font-size: 1.2rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-badge {
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-accent));
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.toggle-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.display-btn {
+    background: var(--himno-light);
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--himno-transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.display-btn:hover {
+    background: rgba(123, 31, 162, 0.1);
+    transform: translateY(-3px);
+}
+
+.display-btn.active {
+    background: linear-gradient(135deg, 
+        rgba(123, 31, 162, 0.1), 
+        rgba(255, 152, 0, 0.1));
+    border-color: var(--himno-primary);
+    box-shadow: 0 5px 15px rgba(74, 20, 140, 0.1);
+}
+
+.display-btn i {
+    font-size: 2rem;
+    color: var(--himno-primary);
+}
+
+.display-btn span {
+    color: var(--himno-dark);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.display-btn small {
+    color: #666;
+    font-size: 0.8rem;
+    line-height: 1.3;
+}
+
+.toggle-description {
+    background: rgba(243, 229, 245, 0.5);
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--himno-primary);
+}
+
+.toggle-description p {
+    margin: 0;
+    color: var(--himno-dark);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.toggle-description i {
+    color: var(--himno-accent);
+    margin-top: 0.2rem;
+}
+
+.toggle-description strong {
+    color: var(--himno-primary);
+}
+
+/* === SIDEBAR === */
+.himno-sidebar-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+    transition: var(--himno-transition);
+}
+
+.himno-sidebar-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(74, 20, 140, 0.15);
+}
+
+.himno-sidebar-header {
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-dark));
+    color: white;
+    padding: 1.2rem 1.5rem;
+    position: relative;
+}
+
+.himno-sidebar-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        var(--himno-accent), 
+        var(--himno-gold));
+}
+
+.himno-sidebar-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.himno-sidebar-content {
+    padding: 1.5rem;
+}
+
+/* Detalles del himno */
+.himno-detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(123, 31, 162, 0.1);
+    transition: var(--himno-transition);
+}
+
+.himno-detail-item:hover {
+    background: rgba(243, 229, 245, 0.3);
+    padding-left: 10px;
+    border-radius: 8px;
+}
+
+.himno-detail-item:last-child {
+    border-bottom: none;
+}
+
+.himno-detail-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-accent));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.himno-detail-info {
+    flex: 1;
+}
+
+.himno-detail-info strong {
+    color: var(--himno-dark);
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.himno-detail-info span {
+    display: block;
+    color: #666;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
+}
+
+.himno-detail-info span:last-child {
+    margin-bottom: 0;
+}
+
+/* Ocasiones */
+.himno-occasion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.himno-occasion-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(243, 229, 245, 0.3);
+    border-radius: 10px;
+    transition: var(--himno-transition);
+}
+
+.himno-occasion-item:hover {
+    background: rgba(123, 31, 162, 0.1);
+    transform: translateX(5px);
+}
+
+.occasion-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--himno-primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.occasion-info h5 {
+    color: var(--himno-dark);
+    margin: 0 0 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+.occasion-info p {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Valores */
+.himno-values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+}
+
+.himno-value-badge {
+    background: linear-gradient(135deg, 
+        rgba(123, 31, 162, 0.1), 
+        rgba(255, 152, 0, 0.1));
+    color: var(--himno-primary);
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid rgba(123, 31, 162, 0.2);
+    transition: var(--himno-transition);
+    cursor: default;
+}
+
+.himno-value-badge:hover {
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-accent));
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 20, 140, 0.2);
+}
+
+/* CTA Descarga */
+.himno-download-card {
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-dark));
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.himno-download-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        transparent 70%);
+    animation: download-glow 4s linear infinite;
+}
+
+@keyframes download-glow {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.himno-download-content {
+    padding: 2rem 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.download-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--himno-accent);
+    animation: download-float 3s ease-in-out infinite;
+}
+
+@keyframes download-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.himno-download-content h4 {
+    color: white;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.himno-download-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.himno-download-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--himno-accent), var(--himno-gold));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: var(--himno-transition);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.himno-download-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    transition: var(--himno-transition);
+}
+
+.himno-download-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.4);
+}
+
+.himno-download-button:hover::before {
+    left: 100%;
+}
+
+/* Atajos de teclado */
+.himno-shortcuts-card {
+    background: white;
+}
+
+.himno-shortcuts-content {
+    padding: 1.5rem;
+}
+
+.himno-shortcuts-content h4 {
+    color: var(--himno-primary);
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.shortcuts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+}
+
+.shortcut-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    background: rgba(243, 229, 245, 0.3);
+    border-radius: 8px;
+    transition: var(--himno-transition);
+}
+
+.shortcut-item:hover {
+    background: rgba(123, 31, 162, 0.1);
+    transform: translateX(5px);
+}
+
+shortcut-item kbd {
+    background: var(--himno-primary);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    min-width: 40px;
+    text-align: center;
+}
+
+.shortcut-item span {
+    color: var(--himno-dark);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* === SECCIÓN DE LETRA DEL HIMNO === */
+.himno-lyrics-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.himno-lyrics-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.himno-lyrics-header h2 {
+    color: var(--himno-dark);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.himno-lyrics-header h2 i {
+    color: var(--himno-primary);
+}
+
+.himno-lyrics-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.4;
+}
+
+.himno-section-line {
+    width: 100px;
+    height: 4px;
+    background: var(--himno-gradient);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.himno-lyrics-container {
+    background: var(--himno-light);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--himno-shadow);
+}
+
+/* Modo Estático (Visible por defecto) */
+.himno-lyrics-static {
+    padding: 2.5rem;
+}
+
+.lyrics-strofa-container {
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: var(--himno-transition);
+    position: relative;
+}
+
+.lyrics-strofa-container:hover {
+    border-color: var(--himno-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(74, 20, 140, 0.1);
+}
+
+.lyrics-strofa-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-accent));
+}
+
+.strofa-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, 
+        rgba(123, 31, 162, 0.05), 
+        rgba(255, 152, 0, 0.05));
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.strofa-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-dark));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.strofa-title h3 {
+    color: var(--himno-dark);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.strofa-title h3 i {
+    color: var(--himno-primary);
+}
+
+.strofa-title p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.strofa-content {
+    padding: 1.5rem;
+}
+
+.strofa-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--himno-dark);
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+.strofa-text::first-letter {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--himno-primary);
+    float: left;
+    margin-right: 0.5rem;
+    line-height: 1;
+    font-family: 'Georgia', serif;
+}
+
+.strofa-meta {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.meta-item i {
+    color: var(--himno-primary);
+}
+
+/* Modo Sincronizado (Oculto por defecto) */
+.himno-lyrics-sync {
+    padding: 0;
+}
+
+.lyrics-sync-header {
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-dark));
+    color: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.sync-info h3 {
+    color: white;
+    margin: 0 0 0.3rem 0;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.sync-info p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.sync-stats {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.stat-item i {
+    color: var(--himno-accent);
+}
+
+.lyrics-sync-content {
+    padding: 2rem;
+    max-height: 500px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.lyrics-sync-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.lyrics-sync-content::-webkit-scrollbar-track {
+    background: var(--himno-light);
+    border-radius: 4px;
+}
+
+.lyrics-sync-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-accent));
+    border-radius: 4px;
+}
+
+.lyric-line {
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    transition: var(--himno-transition);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--himno-dark);
+    border-left: 4px solid transparent;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.lyric-line:hover {
+    background: rgba(123, 31, 162, 0.05);
+    transform: translateX(5px);
+}
+
+.lyric-line.active {
+    background: linear-gradient(135deg, 
+        rgba(123, 31, 162, 0.1), 
+        rgba(255, 152, 0, 0.1));
+    border-left-color: var(--himno-accent);
+    color: var(--himno-primary);
+    font-weight: 600;
+    transform: translateX(5px);
+}
+
+.lyric-time {
+    color: var(--himno-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    width: 50px;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.lyric-text {
+    flex: 1;
+}
+
+.lyrics-sync-footer {
+    background: rgba(243, 229, 245, 0.5);
+    padding: 1.5rem 2rem;
+    border-top: 2px solid rgba(123, 31, 162, 0.1);
+}
+
+.sync-tip {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--himno-dark);
+}
+
+.sync-tip i {
+    color: var(--himno-accent);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.sync-tip p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.sync-tip strong {
+    color: var(--himno-primary);
+}
+
+/* === SECCIÓN DE HISTORIA Y CONTEXTO === */
+.himno-history-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, 
+        rgba(243, 229, 245, 0.8) 0%, 
+        rgba(225, 190, 231, 0.8) 100%);
+}
+
+.himno-history-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.himno-history-text h3 {
+    color: var(--himno-dark);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.himno-history-text h3 i {
+    color: var(--himno-primary);
+}
+
+.history-intro {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.history-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: var(--himno-transition);
+    border: 2px solid transparent;
+}
+
+.history-card:hover {
+    border-color: var(--himno-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(74, 20, 140, 0.15);
+}
+
+.history-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--himno-primary), var(--himno-accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.history-card h4 {
+    color: var(--himno-dark);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.history-card p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.himno-history-image {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.himno-history-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.8s ease;
+}
+
+.himno-history-image:hover img {
+    transform: scale(1.03);
+}
+
+.himno-history-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(74, 20, 140, 0.9));
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.overlay-content {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.overlay-content i {
+    font-size: 2.5rem;
+    color: var(--himno-accent);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.overlay-content h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.overlay-content p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1200px) {
+    .himno-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .himno-history-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .himno-history-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 992px) {
+    .himno-banner-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .himno-hero {
+        min-height: auto;
+        padding: 120px 0 80px;
+    }
+    
+    .himno-main-title {
+        font-size: 2.8rem;
+    }
+    
+    .himno-title-highlight {
+        font-size: 3.2rem;
+    }
+    
+    .himno-hero-stats {
+        gap: 1.5rem;
+    }
+    
+    .himno-stat {
+        min-width: 140px;
+        padding: 1.5rem;
+    }
+    
+    .himno-stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .toggle-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .himno-main-title {
+        font-size: 2rem;
+    }
+    
+    .himno-title-highlight {
+        font-size: 2.2rem;
+    }
+    
+    .himno-title-line {
+        font-size: 1.2rem;
+    }
+    
+    .himno-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .himno-hero-message {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 1.5rem;
+    }
+    
+    .himno-hero-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .himno-stat {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .himno-banner-image {
+        height: 350px;
+    }
+    
+    .himno-banner-word {
+        font-size: 1.8rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .main-controls {
+        gap: 1rem;
+    }
+    
+    .secondary-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .lyrics-sync-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .sync-stats {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .strofa-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .strofa-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .strofa-meta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .history-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .himno-main-title {
+        font-size: 1.6rem;
+    }
+    
+    .himno-title-highlight {
+        font-size: 1.8rem;
+    }
+    
+    .himno-banner-image {
+        height: 300px;
+    }
+    
+    .himno-banner-word {
+        font-size: 1.5rem;
+    }
+    
+    .control-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .control-btn.play-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.3rem;
+    }
+    
+    .lyric-line {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .lyric-time {
+        width: 45px;
+        font-size: 0.8rem;
+    }
+    
+    .lyric-text {
+        font-size: 1rem;
+    }
+    
+    .himno-history-overlay h4 {
+        font-size: 1.2rem;
+    }
+    
+    .shortcuts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.himno-hero-content,
+.himno-info-card,
+.himno-card,
+.himno-sidebar-card,
+.lyrics-strofa-container,
+.history-card {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.himno-hero-content { animation-delay: 0.1s; }
+.himno-info-card { animation-delay: 0.2s; }
+.himno-card:nth-child(1) { animation-delay: 0.3s; }
+.himno-card:nth-child(2) { animation-delay: 0.4s; }
+.himno-sidebar-card:nth-child(1) { animation-delay: 0.5s; }
+.himno-sidebar-card:nth-child(2) { animation-delay: 0.6s; }
+
+/* Efecto de scroll reveal */
+.himno-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.himno-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

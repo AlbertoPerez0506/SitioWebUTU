@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himno UTU - Universidad Tecnológica del Usumacinta</title>
+    <link rel="icon" type="image/x-icon" href="/assets/img/icon/icon.webp">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/secciones/conocenos/himno.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header se cargará dinámicamente -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section del Himno -->
+    <section class="himno-hero">
+        <div class="container">
+            <div class="himno-hero-content">
+                <div class="himno-titles">
+                    <h1 class="himno-main-title">
+                        <span class="himno-title-line">HIMNO</span>
+                        <span class="himno-title-highlight">UNIVERSITARIO</span>
+                    </h1>
+                    
+                    <h2 class="himno-subtitle">
+                        Universidad Tecnológica del Usumacinta
+                        <span class="himno-badge">Símbolo de Identidad Institucional</span>
+                    </h2>
+                    
+                    <div class="himno-hero-message">
+                        <i class="fas fa-music"></i>
+                        <span>La voz que representa nuestro compromiso y excelencia</span>
+                    </div>
+                </div>
+                
+                <div class="himno-hero-stats">
+                    <div class="himno-stat">
+                        <div class="himno-stat-number">100%</div>
+                        <div class="himno-stat-label">Orgullo Universitario</div>
+                    </div>
+                    <div class="himno-stat">
+                        <div class="himno-stat-number">2:09</div>
+                        <div class="himno-stat-label">Duración</div>
+                    </div>
+                    <div class="himno-stat">
+                        <div class="himno-stat-number">24</div>
+                        <div class="himno-stat-label">Líneas de Letra</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Elementos musicales decorativos -->
+        <div class="himno-elements">
+            <div class="himno-clef">
+                <i class="fas fa-music"></i>
+            </div>
+            <div class="himno-notes">
+                <div class="note" style="top: 25%; left: 20%;">♪</div>
+                <div class="note" style="top: 45%; left: 75%;">♫</div>
+                <div class="note" style="top: 65%; left: 35%;">♩</div>
+                <div class="note" style="top: 40%; left: 55%;">♪</div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="himno-scroll-indicator">
+            <div class="himno-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <span>Descubre nuestra melodía institucional</span>
+        </div>
+    </section>
+
+    <!-- === BANNER DE HIMNO === -->
+    <section class="himno-banner">
+        <div class="container">
+            <div class="himno-banner-grid">
+                <div class="himno-banner-image">
+                    <img src="/assets/img/carrusel/universitarios.jpeg" 
+                         alt="Himno UTU - Símbolo de Identidad"
+                         loading="lazy">
+                    <div class="himno-banner-overlay">
+                        <h3 class="himno-banner-text">
+                            <span class="himno-banner-word">MÚSICA</span>
+                            <span class="himno-banner-word">IDENTIDAD</span>
+                            <span class="himno-banner-word">ORGULLO</span>
+                        </h3>
+                    </div>
+                </div>
+                
+                <div class="himno-banner-info">
+                    <div class="himno-info-card">
+                        <div class="himno-info-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h4>Compositor</h4>
+                        <p>Obra escrita y producida por el <strong>Prof. Jorge Ocaña Hernández</strong></p>
+                        <div class="himno-author-tag">
+                            <i class="fas fa-award"></i>
+                            Composición Original
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === SECCIÓN PRINCIPAL === -->
+    <section class="himno-main-section">
+        <div class="container">
+            <div class="himno-content-grid">
+                <!-- Columna Principal (Reproductor) -->
+                <div class="himno-main-column">
+                    <!-- Reproductor de Audio -->
+                    <div class="himno-card himno-player-card">
+                        <div class="himno-card-header">
+                            <h3><i class="fas fa-play-circle"></i> REPRODUCTOR DEL HIMNO</h3>
+                            <p class="himno-card-subtitle">Escucha y vive la experiencia completa</p>
+                        </div>
+                        <div class="himno-card-body">
+                            <div class="himno-player-wrapper">
+                                <audio id="himnoAudio">
+                                    <source src="/assets/audios/Himno Utu.mp3" type="audio/mpeg">
+                                    Tu navegador no soporta el elemento de audio.
+                                </audio>
+                                
+                                <div class="player-controls">
+                                    <!-- Información de la pista -->
+                                    <div class="track-info">
+                                        <div class="track-image">
+                                            <i class="fas fa-university"></i>
+                                        </div>
+                                        <div class="track-details">
+                                            <h4>Himno Oficial UTU</h4>
+                                            <p>Universidad Tecnológica del Usumacinta</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Barra de progreso -->
+                                    <div class="progress-container">
+                                        <div class="time-display">
+                                            <span id="currentTime" class="time-current">0:00</span>
+                                            <span id="duration" class="time-total">2:09</span>
+                                        </div>
+                                        <div class="progress-bar" id="progressBar">
+                                            <div class="progress" id="progress"></div>
+                                            <div class="progress-handle" id="progressHandle"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Controles principales -->
+                                    <div class="main-controls">
+                                        <button class="control-btn" id="repeatBtn" title="Repetir">
+                                            <i class="fas fa-redo"></i>
+                                        </button>
+                                        
+                                        <button class="control-btn" id="rewindBtn" title="Retroceder 10s">
+                                            <i class="fas fa-backward"></i>
+                                        </button>
+                                        
+                                        <button class="control-btn play-btn" id="playPauseBtn" title="Reproducir/Pausar">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        
+                                        <button class="control-btn" id="forwardBtn" title="Adelantar 10s">
+                                            <i class="fas fa-forward"></i>
+                                        </button>
+                                        
+                                        <button class="control-btn" id="shuffleBtn" title="Aleatorio">
+                                            <i class="fas fa-random"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <!-- Controles secundarios -->
+                                    <div class="secondary-controls">
+                                        <div class="volume-control">
+                                            <button class="control-btn volume-btn" id="volumeBtn" title="Volumen">
+                                                <i class="fas fa-volume-up"></i>
+                                            </button>
+                                            <div class="volume-slider-container" id="volumeContainer">
+                                                <input type="range" min="0" max="100" value="100" class="volume-slider" id="volumeSlider">
+                                            </div>
+                                        </div>
+                                        
+                                        <button class="control-btn" id="downloadBtn" title="Descargar">
+                                            <i class="fas fa-download"></i>
+                                        </button>
+                                        
+                                        <button class="control-btn" id="fullscreenBtn" title="Pantalla completa">
+                                            <i class="fas fa-expand"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Estado del reproductor -->
+                                <div class="player-status" id="playerStatus">
+                                    <div class="status-indicator">
+                                        <div class="status-dot"></div>
+                                        <span id="statusText">Listo para reproducir</span>
+                                    </div>
+                                    <div class="player-info">
+                                        <div class="info-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span>Duración: <strong>2:09</strong></span>
+                                        </div>
+                                        <div class="info-item">
+                                            <i class="fas fa-file-audio"></i>
+                                            <span>Formato: <strong>MP3</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Controles de Visualización -->
+                    <div class="himno-card himno-display-controls">
+                        <div class="himno-card-body">
+                            <div class="display-toggle">
+                                <div class="toggle-header">
+                                    <h4><i class="fas fa-eye"></i> MODO DE VISUALIZACIÓN</h4>
+                                    <div class="toggle-status" id="toggleStatus">
+                                        <span class="status-badge">Estático</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="toggle-buttons">
+                                    <button class="display-btn active" id="staticModeBtn">
+                                        <i class="fas fa-scroll"></i>
+                                        <span>Letra Estática</span>
+                                        <small>Ver todas las estrofas</small>
+                                    </button>
+                                    
+                                    <button class="display-btn" id="syncModeBtn">
+                                        <i class="fas fa-music"></i>
+                                        <span>Seguir en Tiempo Real</span>
+                                        <small>Sincronizado con audio</small>
+                                    </button>
+                                </div>
+                                
+                                <div class="toggle-description">
+                                    <p id="modeDescription">
+                                        <i class="fas fa-info-circle"></i>
+                                        <strong>Modo Estático:</strong> Visualiza todas las estrofas del himno de forma completa y organizada.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar (Información) -->
+                <div class="himno-sidebar">
+                    <!-- Detalles del Himno -->
+                    <div class="himno-sidebar-card">
+                        <div class="himno-sidebar-header">
+                            <h4><i class="fas fa-info-circle"></i> DETALLES DEL HIMNO</h4>
+                        </div>
+                        <div class="himno-sidebar-content">
+                            <div class="himno-detail-item">
+                                <div class="himno-detail-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="himno-detail-info">
+                                    <strong>Creación:</strong>
+                                    <span>Composición original institucional</span>
+                                </div>
+                            </div>
+                            
+                            <div class="himno-detail-item">
+                                <div class="himno-detail-icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <div class="himno-detail-info">
+                                    <strong>Autor:</strong>
+                                    <span>Prof. Jorge Ocaña Hernández</span>
+                                </div>
+                            </div>
+                            
+                            <div class="himno-detail-item">
+                                <div class="himno-detail-icon">
+                                    <i class="fas fa-microphone-alt"></i>
+                                </div>
+                                <div class="himno-detail-info">
+                                    <strong>Interpretación:</strong>
+                                    <span>Coro Universitario UTU</span>
+                                </div>
+                            </div>
+                            
+                            <div class="himno-detail-item">
+                                <div class="himno-detail-icon">
+                                    <i class="fas fa-compact-disc"></i>
+                                </div>
+                                <div class="himno-detail-info">
+                                    <strong>Grabación:</strong>
+                                    <span>Estudio profesional</span>
+                                    <span>Calidad CD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ocasiones de Interpretación -->
+                    <!-- <div class="himno-sidebar-card">
+                        <div class="himno-sidebar-header">
+                            <h4><i class="fas fa-calendar-check"></i> OCASIONES ESPECIALES</h4>
+                        </div>
+                        <div class="himno-sidebar-content">
+                            <div class="himno-occasion-list">
+                                <div class="himno-occasion-item">
+                                    <div class="occasion-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="occasion-info">
+                                        <h5>Ceremonias de Graduación</h5>
+                                        <p>Honrando a nuestros egresados</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="himno-occasion-item">
+                                    <div class="occasion-icon">
+                                        <i class="fas fa-flag"></i>
+                                    </div>
+                                    <div class="occasion-info">
+                                        <h5>Inauguraciones</h5>
+                                        <p>Inicio del ciclo escolar</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="himno-occasion-item">
+                                    <div class="occasion-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <div class="occasion-info">
+                                        <h5>Eventos Deportivos</h5>
+                                        <p>Competencias universitarias</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="himno-occasion-item">
+                                    <div class="occasion-icon">
+                                        <i class="fas fa-landmark"></i>
+                                    </div>
+                                    <div class="occasion-info">
+                                        <h5>Actos Cívicos</h5>
+                                        <p>Celebraciones patrióticas</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- Valores Representados -->
+                    <div class="himno-sidebar-card">
+                        <div class="himno-sidebar-header">
+                            <h4><i class="fas fa-star"></i> VALORES REPRESENTADOS</h4>
+                        </div>
+                        <div class="himno-sidebar-content">
+                            <div class="himno-values-grid">
+                                <span class="himno-value-badge">Excelencia</span>
+                                <span class="himno-value-badge">Identidad</span>
+                                <span class="himno-value-badge">Compromiso</span>
+                                <span class="himno-value-badge">Unidad</span>
+                                <span class="himno-value-badge">Tradición</span>
+                                <span class="himno-value-badge">Innovación</span>
+                                <span class="himno-value-badge">Orgullo</span>
+                                <span class="himno-value-badge">Patriotismo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Descarga -->
+                    <!-- <div class="himno-sidebar-card himno-download-card">
+                        <div class="himno-download-content">
+                            <div class="download-icon">
+                                <i class="fas fa-file-download"></i>
+                            </div>
+                            <h4>¿Necesitas el Himno?</h4>
+                            <p>Descarga la versión oficial en alta calidad</p>
+                            <a href="/assets/audios/Himno Utu.mp3" 
+                               class="himno-download-button"
+                               download>
+                                <i class="fas fa-download"></i>
+                                DESCARGAR MP3
+                            </a>
+                        </div>
+                    </div> -->
+
+                    <!-- Atajos de Teclado -->
+                    <div class="himno-sidebar-card himno-shortcuts-card">
+                        <div class="himno-shortcuts-content">
+                            <h4><i class="fas fa-keyboard"></i> ATAJOS DE TECLADO</h4>
+                            <div class="shortcuts-grid">
+                                <div class="shortcut-item">
+                                    <kbd>Espacio</kbd>
+                                    <span>Reproducir/Pausa</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>←</kbd>
+                                    <span>Retroceder 10s</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>→</kbd>
+                                    <span>Adelantar 10s</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>M</kbd>
+                                    <span>Silenciar</span>
+                                </div>
+                                <div class="shortcut-item">
+                                    <kbd>L</kbd>
+                                    <span>Cambiar modo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === SECCIÓN DE LETRA DEL HIMNO === -->
+    <section class="himno-lyrics-section">
+        <div class="container">
+            <div class="himno-lyrics-header">
+                <h2><i class="fas fa-scroll"></i> LETRA OFICIAL DEL HIMNO UTU</h2>
+                <p class="himno-lyrics-subtitle">Las palabras que inspiran nuestro compromiso universitario</p>
+                <div class="himno-section-line"></div>
+            </div>
+            
+            <div class="himno-lyrics-container">
+                <!-- Modo Estático (Visible por defecto) -->
+                <div class="himno-lyrics-static" id="lyricsStaticMode">
+                    <div class="lyrics-strofa-container">
+                        <div class="strofa-header">
+                            <div class="strofa-number">
+                                <span>01</span>
+                            </div>
+                            <div class="strofa-title">
+                                <h3><i class="fas fa-music"></i> Primera Estrofa</h3>
+                                <p>Expresión de identidad y compromiso</p>
+                            </div>
+                        </div>
+                        <div class="strofa-content">
+                            <div class="strofa-text" id="strofa1Text">
+                                <!-- Llenado por JS -->
+                            </div>
+                            <div class="strofa-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>0:09 - 0:48</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-align-left"></i>
+                                    <span>9 líneas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lyrics-strofa-container">
+                        <div class="strofa-header">
+                            <div class="strofa-number">
+                                <span>02</span>
+                            </div>
+                            <div class="strofa-title">
+                                <h3><i class="fas fa-music"></i> Segunda Estrofa</h3>
+                                <p>Compromiso con la excelencia educativa</p>
+                            </div>
+                        </div>
+                        <div class="strofa-content">
+                            <div class="strofa-text" id="strofa2Text">
+                                <!-- Llenado por JS -->
+                            </div>
+                            <div class="strofa-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>0:48 - 1:33</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-align-left"></i>
+                                    <span>8 líneas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lyrics-strofa-container">
+                        <div class="strofa-header">
+                            <div class="strofa-number">
+                                <span>03</span>
+                            </div>
+                            <div class="strofa-title">
+                                <h3><i class="fas fa-music"></i> Tercera Estrofa</h3>
+                                <p>Visión de futuro y desarrollo</p>
+                            </div>
+                        </div>
+                        <div class="strofa-content">
+                            <div class="strofa-text" id="strofa3Text">
+                                <!-- Llenado por JS -->
+                            </div>
+                            <div class="strofa-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>1:33 - 2:09</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-align-left"></i>
+                                    <span>7 líneas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modo Sincronizado (Oculto por defecto) -->
+                <div class="himno-lyrics-sync" id="lyricsSyncMode" style="display: none;">
+                    <div class="lyrics-sync-header">
+                        <div class="sync-info">
+                            <h3><i class="fas fa-sync-alt"></i> Modo Sincronizado</h3>
+                            <p>Sigue la letra en tiempo real con el audio</p>
+                        </div>
+                        <div class="sync-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-play"></i>
+                                <span id="currentLine">Línea 0</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-clock"></i>
+                                <span id="syncTime">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lyrics-sync-content" id="lyricsSyncContent">
+                        <!-- Llenado dinámicamente por JS -->
+                    </div>
+                    
+                    <div class="lyrics-sync-footer">
+                        <div class="sync-tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>Tip:</strong> Haz clic en cualquier línea para saltar a ese momento del himno</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === SECCIÓN DE HISTORIA Y CONTEXTO === -->
+    <!-- <section class="himno-history-section">
+        <div class="container">
+            <div class="himno-history-content">
+                <div class="himno-history-text">
+                    <h3><i class="fas fa-history"></i> HISTORIA Y SIGNIFICADO</h3>
+                    <p class="history-intro">
+                        El Himno de la Universidad Tecnológica del Usumacinta fue creado como un símbolo de identidad institucional que representa los valores fundamentales de nuestra comunidad universitaria.
+                    </p>
+                    
+                    <div class="history-grid">
+                        <div class="history-card">
+                            <div class="history-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h4>Propósito</h4>
+                            <p>Fortalece la identidad institucional y fomenta el sentido de pertenencia entre estudiantes, docentes y personal administrativo.</p>
+                        </div>
+                        
+                        <div class="history-card">
+                            <div class="history-icon">
+                                <i class="fas fa-compose"></i>
+                            </div>
+                            <h4>Composición</h4>
+                            <p>Obra original creada específicamente para la UTU, reflejando nuestra misión, visión y valores institucionales.</p>
+                        </div>
+                        
+                        <div class="history-card">
+                            <div class="history-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Impacto</h4>
+                            <p>Interpretado en ceremonias oficiales, eventos deportivos y actividades que fortalecen la comunidad universitaria.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="himno-history-image">
+                    <img src="../../assets/img/conocenos/himno-historia.webp" 
+                         alt="Historia del Himno UTU"
+                         loading="lazy">
+                    <div class="himno-history-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-quote-left"></i>
+                            <h4>"La música que une a nuestra comunidad universitaria"</h4>
+                            <p>Prof. Jorge Ocaña Hernández</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer se cargará dinámicamente -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="/js/modules/componentes.js"></script>
+    <script src="/js/secciones/conocenos/himno.js"></script>
+</body>
+</html>

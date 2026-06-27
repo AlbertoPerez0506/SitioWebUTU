@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación - Universidad Tecnológica del Usumacinta</title>
+    <link rel="icon" type="image/x-icon" href="/assets/img/icon/icon.webp">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/secciones/conocenos/ubicacion.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ 
+</head>
+<body>
+    <!-- Header se cargará dinámicamente -->
+    <div id="header-container"></div>
+
+
+    <!-- Hero Section Ubicación -->
+    <section class="ubicacion-hero">
+        <div class="container">
+            <div class="ubicacion-hero-content">
+                <h1 class="ubicacion-title">Ubicación</h1>
+                <h2 class="ubicacion-subtitle">Universidad Tecnológica del Usumacinta</h2>
+                <div class="ubicacion-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Emiliano Zapata, Tabasco</span>
+                </div>
+                <div class="hero-info">
+                    <div class="ubicacion-info-item">
+                        <i class="fas fa-road"></i>
+                        <span>Libramiento Glorieta Emiliano Zapata-Tenosique s/n</span>
+                    </div>
+                    <div class="ubicacion-info-item">
+                        <i class="fas fa-mail-bulk"></i>
+                        <span>C.P. 86980</span>
+                    </div>
+                    <div class="ubicacion-info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Tel. y Fax: 934 34 3 56 90</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Interactivo -->
+    <section class="mapa-section">
+        <div class="container">
+            <div class="mapa-header">
+                <h2><i class="fas fa-map-marked-alt"></i> Mapa Interactivo</h2>
+                <p>Encuentra nuestra ubicación exacta y las mejores rutas para visitarnos</p>
+            </div>
+            
+            <div class="mapa-container">
+                <div class="mapa-wrapper">
+                    <!-- Mapa de Google Maps -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d475.03438683273794!2d-91.77502226418433!3d17.731672584796605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85f3cbbfb7fde379%3A0x8a3bb330c0e20daa!2sUniversidad%20Tecnol%C3%B3gica%20del%20Usumacinta!5e0!3m2!1ses!2smx!4v1764793475562!5m2!1ses!2smx" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="mapa-iframe"
+                        title="Mapa de la Universidad Tecnológica del Usumacinta"
+                        id="mapaIframe">
+                    </iframe>
+                    
+                    <!-- Controles del Mapa -->
+                    <div class="mapa-controls">
+                        <button class="control-btn" id="zoomIn">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                        <button class="control-btn" id="zoomOut">
+                            <i class="fas fa-search-minus"></i>
+                        </button>
+                        <button class="control-btn" id="locationBtn">
+                            <i class="fas fa-location-arrow"></i>
+                        </button>
+                        <button class="control-btn" id="fullscreenBtn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mapa-actions">
+                    <a href="https://www.google.com/maps/dir//Universidad+Tecnol%C3%B3gica+del+Usumacinta/@17.7316726,-91.7750223,19z/data=!4m8!4m7!1m0!1m5!1m1!1s0x85f3cbbfb7fde379:0x8a3bb330c0e20daa!2m2!1d-91.7744944!2d17.731522" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="btn btn-primary">
+                        <i class="fas fa-directions"></i>
+                        Cómo llegar
+                    </a>
+                    <button class="btn btn-secondary" id="shareLocation">
+                        <i class="fas fa-share-alt"></i>
+                        Compartir ubicación
+                    </button>
+                    <button class="btn btn-outline" id="saveLocation">
+                        <i class="fas fa-bookmark"></i>
+                        Guardar lugar
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mapa-info">
+                <div class="info-card">
+                    <div class="ubicacion-info-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Acceso en Automóvil</h3>
+                        <p>Estacionamiento disponible dentro de las instalaciones</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="ubicacion-info-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Transporte Público</h3>
+                        <p>Rutas de transporte urbano con parada frente a la universidad</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="ubicacion-info-icon">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Accesibilidad</h3>
+                        <p>Instalaciones accesibles para personas con movilidad reducida</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de Contacto -->
+    <section class="contacto-section">
+        <div class="container">
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <h2><i class="fas fa-university"></i> Información de Contacto</h2>
+                    
+                    <div class="contacto-details">
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h3>Dirección</h3>
+                                <p>Libramiento Glorieta Emiliano Zapata-Tenosique s/n<br>
+                                Col. Las Lomas<br>
+                                Emiliano Zapata, Tabasco<br>
+                                Código Postal: 86980</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h3>Teléfono y Fax</h3>
+                                <p><strong>934 34 3 56 90</strong></p>
+                                <div class="phone-actions">
+                                    <a href="tel:+529343435690" class="phone-link">
+                                        <i class="fas fa-phone"></i> Llamar ahora
+                                    </a>
+                                    <button class="copy-btn" data-text="9343435690">
+                                        <i class="far fa-copy"></i> Copiar número
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h3>Horarios de Atención</h3>
+                                <div class="horarios-grid">
+                                    <div class="horario-item">
+                                        <span class="dia">Lunes - Viernes</span>
+                                        <span class="hora">8:00 AM - 4:00 PM</span>
+                                    </div>
+                                    <div class="horario-item">
+                                        <span class="dia">Sábado</span>
+                                        <span class="hora">9:00 AM - 1:00 PM</span>
+                                    </div>
+                                    <div class="horario-item">
+                                        <span class="dia">Domingo</span>
+                                        <span class="hora">Cerrado</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h3>Correos Electrónicos</h3>
+                                <div class="emails-list">
+                                    <div class="email-item">
+                                        <span class="email-label">Rectoría:</span>
+                                        <a href="mailto:rectoria@utusumacinta.edu.mx" class="email-link">
+                                            rectoria@utusumacinta.edu.mx
+                                        </a>
+                                    </div>
+                                    <div class="email-item">
+                                        <span class="email-label">Informes:</span>
+                                        <a href="mailto:informes@utusumacinta.edu.mx" class="email-link">
+                                            informes@utusumacinta.edu.mx
+                                        </a>
+                                    </div>
+                                    <div class="email-item">
+                                        <span class="email-label">Admisiones:</span>
+                                        <a href="mailto:admisiones@utusumacinta.edu.mx" class="email-link">
+                                            admisiones@utusumacinta.edu.mx
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contacto-form-container">
+                    <div class="form-card">
+                        <h3><i class="fas fa-paper-plane"></i> Envíanos un Mensaje</h3>
+                        <p>¿Tienes preguntas sobre nuestra ubicación? Escríbenos</p>
+                        
+                        <form id="contactoForm" class="contacto-form">
+                            <div class="form-group">
+                                <label for="nombre">Nombre completo *</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Correo electrónico *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="asunto">Asunto *</label>
+                                <select id="asunto" name="asunto" required>
+                                    <option value="">Selecciona un asunto</option>
+                                    <option value="ubicacion">Información sobre ubicación</option>
+                                    <option value="visita">Visita guiada a instalaciones</option>
+                                    <option value="ruta">Rutas de acceso y transporte</option>
+                                    <option value="estacionamiento">Información de estacionamiento</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje *</label>
+                                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar mensaje
+                            </button>
+                        </form>
+                        
+                        <div class="form-info">
+                            <p><i class="fas fa-info-circle"></i> Te responderemos en un máximo de 24 horas hábiles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Transporte -->
+    <!-- <section class="transporte-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-route"></i> Rutas de Acceso</h2>
+                <p>Cómo llegar a la Universidad Tecnológica del Usumacinta</p>
+            </div>
+            
+            <div class="transporte-grid">
+                <div class="transporte-card">
+                    <div class="transporte-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>En Automóvil</h3>
+                    <ul>
+                        <li>Desde Emiliano Zapata: Toma la carretera Emiliano Zapata-Tenosique</li>
+                        <li>Ubicado en el libramiento frente a la glorieta</li>
+                        <li>Estacionamiento gratuito disponible</li>
+                    </ul>
+                </div>
+                
+                <div class="transporte-card">
+                    <div class="transporte-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3>Transporte Público</h3>
+                    <ul>
+                        <li>Ruta "Las Lomas" - Parada frente a la universidad</li>
+                        <li>Colectivos desde el centro de Emiliano Zapata</li>
+                        <li>Taxis disponibles las 24 horas</li>
+                    </ul>
+                </div>
+                
+                <div class="transporte-card">
+                    <div class="transporte-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3>Caminando</h3>
+                    <ul>
+                        <li>A 15 minutos del centro de Emiliano Zapata</li>
+                        <li>Andadores peatonales iluminados</li>
+                        <li>Señalización clara desde la glorieta principal</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="transporte-extra">
+                <div class="extra-item">
+                    <i class="fas fa-parking"></i>
+                    <div>
+                        <h4>Estacionamiento</h4>
+                        <p>Amplias áreas de estacionamiento para estudiantes, personal y visitantes</p>
+                    </div>
+                </div>
+                <div class="extra-item">
+                    <i class="fas fa-map-signs"></i>
+                    <div>
+                        <h4>Señalización</h4>
+                        <p>Rótulos claros y visibles desde la carretera principal</p>
+                    </div>
+                </div>
+                <div class="extra-item">
+                    <i class="fas fa-sun"></i>
+                    <div>
+                        <h4>Iluminación</h4>
+                        <p>Alumbrado público en todos los accesos y estacionamientos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+   <!-- Footer se cargará dinámicamente -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts UNIFICADOS -->
+    <script src="../../js/modules/componentes.js"></script>
+    <script src="../../js/index.js"></script>
+    <script src="../../js/secciones/conocenos/ubicacion.js"></script>
+</body>
+</html>

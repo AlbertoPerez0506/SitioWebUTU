@@ -1,0 +1,1129 @@
+/* =========================================== */
+/* ESTILOS ESPECÍFICOS PARA BIOTECNOLOGÍA */
+/* =========================================== */
+
+/* === VARIABLES CIENTÍFICAS === */
+:root {
+    --bio-primary: #21b395;       /* Verde científico */
+    --bio-secondary: #2c348f;     /* Azul UTU */
+    --bio-accent: #4CAF50;        /* Verde claro */
+    --bio-light: #f1f8e9;         /* Verde muy claro */
+    --bio-dark: #1b5e20;          /* Verde oscuro */
+    --bio-gradient: linear-gradient(135deg, var(--bio-primary), var(--bio-accent));
+    --bio-transition: all 0.3s ease;
+}
+
+/* === HERO SECTION CIENTÍFICO === */
+.bio-hero {
+    background: linear-gradient(135deg, #1a237e 0%, var(--bio-primary) 100%);
+    color: white;
+    /* padding: 120px 0 80px; */
+    padding: 90px 0 80px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+}
+
+.bio-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 40%, rgba(33, 179, 149, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(44, 52, 143, 0.15) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.bio-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.bio-main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.bio-title-line {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.bio-title-highlight {
+    display: block;
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.bio-title-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: var(--bio-gradient);
+    border-radius: 2px;
+}
+
+.bio-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 2rem 0;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.bio-area {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    margin-top: 0.5rem;
+}
+
+.bio-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    transition: var(--bio-transition);
+}
+
+.bio-hero-badge:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.bio-hero-badge i {
+    color: var(--bio-primary);
+    font-size: 1.5rem;
+}
+
+/* Elementos científicos decorativos */
+.bio-science-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bio-molecule {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    animation: rotate 20s infinite linear;
+}
+
+.bio-atom {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border: 2px solid var(--bio-primary);
+}
+
+.bio-atom:nth-child(1) { top: 0; left: 40px; }
+.bio-atom:nth-child(2) { top: 40px; left: 0; }
+.bio-atom:nth-child(3) { top: 40px; left: 80px; }
+
+.bio-bond {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    height: 2px;
+    width: 60px;
+    top: 50px;
+    left: 20px;
+}
+
+.bio-bond:nth-child(5) { transform: rotate(60deg); }
+.bio-bond:nth-child(4) { transform: rotate(-60deg); }
+
+.bio-cell {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    width: 80px;
+    height: 80px;
+    animation: pulse 4s infinite ease-in-out;
+}
+
+.bio-nucleus {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(33, 179, 149, 0.4);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bio-membrane {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* === BANNER === */
+.bio-banner {
+    padding: 0;
+    background: white;
+}
+
+.bio-banner-image {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 20px 20px;
+}
+
+.bio-banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.8s ease;
+}
+
+.bio-banner-image:hover img {
+    transform: scale(1.03);
+}
+
+.bio-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(44, 52, 143, 0.7), rgba(33, 179, 149, 0.7));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.bio-banner-text {
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 600;
+    max-width: 800px;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* === SECCIÓN DE DESCRIPCIÓN === */
+.bio-desc-section {
+    padding: 80px 0;
+    background: var(--bio-light);
+}
+
+.bio-desc-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bio-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.bio-section-header h2 {
+    color: var(--bio-dark);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.bio-section-header h2 i {
+    color: var(--bio-primary);
+}
+
+.bio-section-line {
+    width: 100px;
+    height: 4px;
+    background: var(--bio-gradient);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.bio-desc-text {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bio-intro {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.bio-intro strong {
+    color: var(--bio-dark);
+}
+
+.bio-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.bio-feature {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: var(--bio-transition);
+    border: 2px solid transparent;
+}
+
+.bio-feature:hover {
+    border-color: var(--bio-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(33, 179, 149, 0.15);
+}
+
+.bio-feature i {
+    font-size: 2.5rem;
+    color: var(--bio-primary);
+    margin-bottom: 1rem;
+}
+
+.bio-feature h4 {
+    color: var(--bio-dark);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.bio-feature p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* === SECCIÓN PRINCIPAL === */
+.bio-main-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.bio-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+/* Cards generales */
+.bio-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.bio-card-header {
+    background: linear-gradient(135deg, var(--bio-primary), var(--bio-secondary));
+    color: white;
+    padding: 1.5rem 2rem;
+}
+
+.bio-card-header h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.bio-card-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.bio-card-body {
+    padding: 2rem;
+}
+
+/* Competencias */
+.bio-comp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.bio-comp-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: var(--bio-transition);
+    border-left: 4px solid transparent;
+}
+
+.bio-comp-item:hover {
+    border-left-color: var(--bio-primary);
+    transform: translateX(5px);
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bio-comp-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--bio-primary), var(--bio-accent));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.bio-comp-icon i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.bio-comp-content h4 {
+    color: var(--bio-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.bio-comp-content p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Perfil */
+.bio-perfil-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.bio-perfil-col {
+    flex: 1;
+}
+
+.bio-perfil-box {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 2rem;
+    height: 100%;
+    border: 2px solid #e9ecef;
+    transition: var(--bio-transition);
+}
+
+.bio-perfil-box:hover {
+    border-color: var(--bio-primary);
+    transform: translateY(-5px);
+}
+
+.bio-perfil-box h4 {
+    color: var(--bio-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.bio-perfil-box h4 i {
+    color: var(--bio-primary);
+}
+
+.bio-perfil-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bio-perfil-list li {
+    padding: 0.8rem 0;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.bio-perfil-list li:last-child {
+    border-bottom: none;
+}
+
+.bio-check {
+    color: var(--bio-primary);
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+/* === SIDEBAR === */
+.bio-sidebar-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.bio-sidebar-header {
+    background: var(--bio-primary);
+    color: white;
+    padding: 1.2rem 1.5rem;
+}
+
+.bio-sidebar-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.bio-sidebar-content {
+    padding: 1.5rem;
+}
+
+/* Info items */
+.bio-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.bio-info-item:last-child {
+    border-bottom: none;
+}
+
+.bio-info-icon {
+    color: var(--bio-primary);
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.bio-info-details {
+    flex: 1;
+}
+
+.bio-info-details strong {
+    color: var(--bio-dark);
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.bio-info-details span {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
+}
+
+.bio-info-details span:last-child {
+    margin-bottom: 0;
+}
+
+/* Campo de trabajo */
+.bio-campo-intro {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+}
+
+.bio-campo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.bio-campo-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: var(--bio-transition);
+}
+
+.bio-campo-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.bio-campo-item i {
+    color: var(--bio-primary);
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.bio-campo-item span {
+    color: #555;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+/* Áreas de especialización */
+.bio-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.8rem;
+}
+
+.bio-area-badge {
+    background: rgba(33, 179, 149, 0.1);
+    color: var(--bio-dark);
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-align: center;
+    font-weight: 500;
+    border: 1px solid rgba(33, 179, 149, 0.3);
+    transition: var(--bio-transition);
+    cursor: default;
+}
+
+.bio-area-badge:hover {
+    background: var(--bio-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Plan de estudios card */
+.bio-plan-card {
+    background: linear-gradient(135deg, var(--bio-secondary), var(--bio-primary));
+    color: white;
+    text-align: center;
+}
+
+.bio-plan-content {
+    padding: 2rem 1.5rem;
+}
+
+.bio-plan-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.bio-plan-content h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.bio-plan-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.bio-plan-btn {
+    display: inline-block;
+    background: white;
+    color: var(--bio-primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--bio-transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    border: 2px solid white;
+}
+
+.bio-plan-btn:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* CTA card */
+.bio-cta-card {
+    background: white;
+}
+
+.bio-cta-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.bio-cta-content h4 {
+    color: var(--bio-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.bio-cta-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.bio-cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--bio-primary), var(--bio-accent));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--bio-transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    border: 2px solid var(--bio-primary);
+}
+
+.bio-cta-btn:hover {
+    background: white;
+    color: var(--bio-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(33, 179, 149, 0.3);
+}
+
+/* === SECCIÓN DE LABORATORIOS === */
+.bio-labs-section {
+    padding: 60px 0;
+    background: var(--bio-light);
+}
+
+.bio-labs-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.bio-labs-header h2 {
+    color: var(--bio-dark);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.bio-labs-header h2 i {
+    color: var(--bio-primary);
+}
+
+.bio-labs-header p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.bio-labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.bio-lab-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--bio-transition);
+    border: 2px solid transparent;
+}
+
+.bio-lab-card:hover {
+    border-color: var(--bio-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.bio-lab-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--bio-primary), var(--bio-accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.bio-lab-icon i {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.bio-lab-card h4 {
+    color: var(--bio-dark);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.bio-lab-card p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* === SECCIÓN DE IMPACTO === */
+.bio-impact-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.bio-impact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.bio-impact-text h3 {
+    color: var(--bio-dark);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bio-impact-text h3 i {
+    color: var(--bio-primary);
+}
+
+.bio-impact-text p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.bio-impact-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.bio-stat {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border: 2px solid #e9ecef;
+    transition: var(--bio-transition);
+}
+
+.bio-stat:hover {
+    border-color: var(--bio-primary);
+    transform: translateY(-5px);
+}
+
+.bio-stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--bio-primary);
+    margin-bottom: 0.5rem;
+}
+
+.bio-stat-label {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.bio-impact-image {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.bio-impact-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.8s ease;
+}
+
+.bio-impact-image:hover img {
+    transform: scale(1.03);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1200px) {
+    .bio-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .bio-main-title {
+        font-size: 2.5rem;
+    }
+    
+    .bio-title-highlight {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .bio-hero {
+        min-height: auto;
+        padding: 100px 0 60px;
+    }
+    
+    .bio-banner-text {
+        font-size: 2rem;
+    }
+    
+    .bio-impact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .bio-impact-image {
+        order: -1;
+    }
+    
+    .bio-section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .bio-labs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .bio-main-title {
+        font-size: 2rem;
+    }
+    
+    .bio-title-highlight {
+        font-size: 2.2rem;
+    }
+    
+    .bio-title-highlight::after {
+        width: 120px;
+    }
+    
+    .bio-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .bio-banner {
+        height: 350px;
+    }
+    
+    .bio-banner-text {
+        font-size: 1.5rem;
+    }
+    
+    .bio-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .bio-perfil-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bio-comp-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bio-labs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bio-impact-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .bio-desc-text {
+        padding: 2rem;
+    }
+    
+    .bio-hero-badge {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .bio-main-title {
+        font-size: 1.6rem;
+    }
+    
+    .bio-title-highlight {
+        font-size: 1.8rem;
+    }
+    
+    .bio-title-line {
+        font-size: 1.2rem;
+    }
+    
+    .bio-banner {
+        height: 250px;
+    }
+    
+    .bio-banner-text {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+    
+    .bio-section-header h2 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .bio-impact-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .bio-stat-number {
+        font-size: 2rem;
+    }
+    
+    .bio-areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .bio-card-body,
+    .bio-sidebar-content {
+        padding: 1.5rem;
+    }
+    
+    .bio-comp-item,
+    .bio-perfil-box,
+    .bio-campo-item,
+    .bio-lab-card,
+    .bio-stat {
+        padding: 1.2rem;
+    }
+}
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bio-hero-content,
+.bio-desc-text,
+.bio-card,
+.bio-sidebar-card,
+.bio-lab-card,
+.bio-stat {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.bio-hero-content { animation-delay: 0.1s; }
+.bio-desc-text { animation-delay: 0.2s; }
+.bio-card:nth-child(1) { animation-delay: 0.3s; }
+.bio-card:nth-child(2) { animation-delay: 0.4s; }
+.bio-sidebar-card:nth-child(1) { animation-delay: 0.5s; }
+.bio-sidebar-card:nth-child(2) { animation-delay: 0.6s; }
+.bio-sidebar-card:nth-child(3) { animation-delay: 0.7s; }
+
+/* Efectos de scroll reveal */
+.bio-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.bio-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

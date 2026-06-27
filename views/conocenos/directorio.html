@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio - Universidad Tecnológica del Usumacinta</title>
+    <link rel="icon" type="image/x-icon" href="/assets/img/icon/icon.webp">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/secciones/conocenos/directorio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Header se cargará dinámicamente -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section Directorio -->
+    <section class="directorio-hero">
+        <div class="container">
+            <div class="directorio-hero-content">
+                <h1 class="directorio-title">Directorio Institucional</h1>
+                <h2 class="directorio-subtitle">Universidad Tecnológica del Usumacinta</h2>
+                <p class="directorio-descripcion">
+                    Encuentra la información de contacto de nuestro equipo directivo, administrativo y académico. 
+                    Estamos para servirte.
+                </p>
+                <div class="hero-info">
+                    <div class="directorio-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Dirección: Libramiento Glorieta Emiliano Zapata – Tenosique s/n</span>
+                    </div>
+                    <div class="directorio-info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Teléfono General: 934 343 56 90</span>
+                    </div>
+                    <div class="directorio-info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Horario: Lunes a Viernes 8:00 - 16:00 hrs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Controles de Filtro y Búsqueda -->
+    <section class="filtros-section">
+        <div class="container">
+            <div class="filtros-container">
+                <!-- Barra de Búsqueda -->
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Buscar por nombre, cargo o área...">
+                        <button id="clearSearch" class="clear-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="search-info">
+                        <span id="resultCount">17 personas encontradas</span>
+                    </div>
+                </div>
+                
+                <!-- Filtros por Categoría -->
+                <div class="categorias-filtro">
+                    <button class="categoria-btn active" data-categoria="todos">
+                        <i class="fas fa-users"></i>
+                        Todos
+                    </button>
+                    <button class="categoria-btn" data-categoria="rectoria">
+                        <i class="fas fa-user-tie"></i>
+                        Rectoría
+                    </button>
+                    <button class="categoria-btn" data-categoria="direccion">
+                        <i class="fas fa-briefcase"></i>
+                        Direcciones
+                    </button>
+                    <button class="categoria-btn" data-categoria="subdireccion">
+                        <i class="fas fa-user-friends"></i>
+                        Subdirecciones
+                    </button>
+                    <button class="categoria-btn" data-categoria="jefatura">
+                        <i class="fas fa-user-graduate"></i>
+                        Jefaturas
+                    </button>
+                    <button class="categoria-btn" data-categoria="academico">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Académico
+                    </button>
+                </div>
+                
+                <!-- Ordenamiento -->
+                <div class="ordenamiento">
+                    <label for="sortSelect">Ordenar por:</label>
+                    <select id="sortSelect" class="sort-select">
+                        <option value="nombre">Nombre (A-Z)</option>
+                        <option value="cargo">Cargo</option>
+                        <option value="area">Área</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Directorio -->
+    <section class="directorio-grid-section">
+        <div class="container">
+            <div class="directorio-grid" id="directorioGrid">
+                <!-- Las tarjetas se generarán dinámicamente con JavaScript -->
+            </div>
+            
+            <!-- Estado sin resultados -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <div class="no-results-content">
+                    <i class="fas fa-search"></i>
+                    <h3>No se encontraron resultados</h3>
+                    <p>Intenta con otros términos de búsqueda o selecciona otra categoría</p>
+                    <button id="resetFilters" class="btn btn-primary">
+                        <i class="fas fa-redo"></i>
+                        Restablecer filtros
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa de Contacto -->
+    <!-- <section class="mapa-contacto-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-map-marked-alt"></i> Ubicación y Contacto</h2>
+                <p>Visítanos en nuestras instalaciones principales</p>
+            </div>
+            
+            <div class="mapa-contacto-grid">
+                <div class="mapa-container">
+                    <div class="mapa-placeholder">
+                        <div class="placeholder-content">
+                            <i class="fas fa-map"></i>
+                            <p>Mapa de ubicación</p>
+                            <small>Espacio para mapa interactivo</small>
+                        </div>
+                    </div>
+                    <div class="mapa-info">
+                        <h4><i class="fas fa-university"></i> Sede Principal</h4>
+                        <p>Libramiento Glorieta Emiliano Zapata – Tenosique s/n<br>
+                        Col. Las Lomas Emiliano Zapata, Tabasco<br>
+                        C.P. 86980</p>
+                    </div>
+                </div>
+                
+                <div class="contacto-rapido">
+                    <h3><i class="fas fa-headset"></i> Contacto Rápido</h3>
+                    <div class="contacto-items">
+                        <div class="contacto-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Teléfono General</h4>
+                                <a href="tel:+529343435690">934 343 56 90</a>
+                            </div>
+                        </div>
+                        <div class="contacto-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Correo Institucional</h4>
+                                <a href="mailto:informes@utusumacinta.edu.mx">informes@utusumacinta.edu.mx</a>
+                            </div>
+                        </div>
+                        <div class="contacto-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Horario de Atención</h4>
+                                <p>Lunes a Viernes: 8:00 - 16:00 hrs</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contacto-cta">
+                        <a href="contacto.html" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensaje
+                        </a>
+                        <a href="tel:+529343435690" class="btn btn-secondary">
+                            <i class="fas fa-phone"></i>
+                            Llamar Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer se cargará dinámicamente -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts UNIFICADOS -->
+    <script src="../../js/modules/componentes.js"></script>
+    <script src="../../js/index.js"></script>
+    <script src="../../js/secciones/conocenos/directorio.js"></script>
+
+</body>
+</html>

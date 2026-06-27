@@ -1,0 +1,1336 @@
+/* =========================================== */
+/* ESTILOS ESPECÍFICOS PARA CONTADURÍA */
+/* =========================================== */
+
+/* === VARIABLES CONTABLES === */
+:root {
+    --contabilidad-primary: #2c348f;       /* Azul confianza */
+    --contabilidad-secondary: #21b395;     /* Verde crecimiento */
+    --contabilidad-accent: #4e54c8;        /* Azul real */
+    --contabilidad-dark: #1a1d3a;          /* Azul oscuro */
+    --contabilidad-light: #f8f9fa;         /* Fondo claro */
+    --contabilidad-success: #28a745;       /* Verde éxito */
+    --contabilidad-gradient: linear-gradient(135deg, var(--contabilidad-primary), var(--contabilidad-accent));
+    --contabilidad-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === HERO SECTION CONTABLE === */
+.contabilidad-hero {
+    background: linear-gradient(135deg, var(--contabilidad-dark) 0%, #2c348f 50%, #1a1d3a 100%);
+    color: white;
+    /* padding: 120px 0 80px; */
+    padding: 80px 0 80px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.contabilidad-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(44, 52, 143, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(78, 84, 200, 0.1) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.contabilidad-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contabilidad-main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contabilidad-title-line {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contabilidad-title-highlight {
+    display: block;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.contabilidad-title-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 4px;
+    background: var(--contabilidad-gradient);
+    border-radius: 2px;
+}
+
+.contabilidad-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 2rem 0;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contabilidad-badge {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--contabilidad-secondary);
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.contabilidad-hero-message {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    margin: 2rem auto;
+    font-size: 1.1rem;
+    transition: var(--contabilidad-transition);
+    max-width: 400px;
+}
+
+.contabilidad-hero-message:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.contabilidad-hero-message i {
+    color: var(--contabilidad-accent);
+    font-size: 1.5rem;
+}
+
+.contabilidad-hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.contabilidad-stat {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    min-width: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--contabilidad-transition);
+}
+
+.contabilidad-stat:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-color: var(--contabilidad-accent);
+}
+
+.contabilidad-stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--contabilidad-accent);
+    margin-bottom: 0.5rem;
+}
+
+.contabilidad-stat-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Elementos contables decorativos */
+.contabilidad-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.contabilidad-graph {
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    width: 150px;
+    height: 100px;
+    border-left: 2px solid rgba(78, 84, 200, 0.5);
+    border-bottom: 2px solid rgba(78, 84, 200, 0.5);
+}
+
+.graph-bar {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    background: linear-gradient(to top, var(--contabilidad-accent), var(--contabilidad-primary));
+    border-radius: 4px 4px 0 0;
+    animation: graph-grow 2s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.3s);
+}
+
+.graph-bar:nth-child(1) { --i: 1; left: 20%; }
+.graph-bar:nth-child(2) { --i: 2; left: 40%; }
+.graph-bar:nth-child(3) { --i: 3; left: 60%; }
+.graph-bar:nth-child(4) { --i: 4; left: 80%; }
+
+.contabilidad-calculator {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    font-size: 3rem;
+    color: rgba(33, 179, 149, 0.3);
+    animation: calculator-pulse 4s infinite ease-in-out;
+}
+
+@keyframes graph-grow {
+    0%, 100% { height: var(--height); }
+    50% { height: calc(var(--height) * 1.2); }
+}
+
+@keyframes calculator-pulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(5deg); }
+}
+
+/* Scroll indicator */
+.contabilidad-scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.contabilidad-arrow {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contabilidad-arrow i {
+    color: var(--contabilidad-accent);
+    animation: bounce-arrow 2s infinite;
+}
+
+@keyframes bounce-arrow {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* === BANNER CONTABLE === */
+.contabilidad-banner {
+    padding: 0;
+    background: white;
+}
+
+.contabilidad-banner-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.contabilidad-banner-image {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.contabilidad-banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.contabilidad-banner-image:hover img {
+    transform: scale(1.05);
+}
+
+.contabilidad-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(44, 52, 143, 0.8), rgba(78, 84, 200, 0.6));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.contabilidad-banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.contabilidad-banner-word {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+}
+
+.contabilidad-banner-word:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: white;
+}
+
+.contabilidad-banner-info {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.contabilidad-info-card {
+    background: var(--contabilidad-primary);
+    color: white;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.contabilidad-info-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--contabilidad-accent);
+}
+
+.contabilidad-info-card h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.contabilidad-info-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* === SECCIÓN DE DESCRIPCIÓN === */
+.contabilidad-desc-section {
+    padding: 80px 0;
+    background: var(--contabilidad-light);
+}
+
+.contabilidad-desc-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contabilidad-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contabilidad-section-header h2 {
+    color: var(--contabilidad-primary);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contabilidad-section-header h2 i {
+    color: var(--contabilidad-accent);
+}
+
+.contabilidad-section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    line-height: 1.4;
+}
+
+.contabilidad-section-line {
+    width: 100px;
+    height: 4px;
+    background: var(--contabilidad-gradient);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.contabilidad-desc-text {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contabilidad-intro {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.contabilidad-intro strong {
+    color: var(--contabilidad-primary);
+}
+
+.contabilidad-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contabilidad-feature {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: var(--contabilidad-transition);
+    border: 2px solid transparent;
+}
+
+.contabilidad-feature:hover {
+    border-color: var(--contabilidad-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(78, 84, 200, 0.15);
+}
+
+.contabilidad-feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--contabilidad-primary), var(--contabilidad-accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.contabilidad-feature-icon i {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.contabilidad-feature h4 {
+    color: var(--contabilidad-primary);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.contabilidad-feature p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* === SECCIÓN PRINCIPAL === */
+.contabilidad-main-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.contabilidad-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+/* Cards generales */
+.contabilidad-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.contabilidad-card-header {
+    background: linear-gradient(135deg, var(--contabilidad-primary), var(--contabilidad-success));
+    color: white;
+    padding: 1.5rem 2rem;
+    position: relative;
+}
+
+.contabilidad-card-header h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.contabilidad-card-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.contabilidad-card-line {
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    width: 60px;
+    height: 3px;
+    background: var(--contabilidad-accent);
+}
+
+.contabilidad-card-body {
+    padding: 2rem;
+}
+
+/* Competencias */
+.contabilidad-comp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.contabilidad-comp-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: var(--contabilidad-transition);
+    border-left: 4px solid transparent;
+}
+
+.contabilidad-comp-item:hover {
+    border-left-color: var(--contabilidad-accent);
+    transform: translateX(5px);
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contabilidad-comp-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--contabilidad-primary), var(--contabilidad-accent));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contabilidad-comp-icon i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.contabilidad-comp-content h4 {
+    color: var(--contabilidad-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.contabilidad-comp-content p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Perfil */
+.contabilidad-perfil-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contabilidad-perfil-box {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 2rem;
+    height: 100%;
+    border: 2px solid #e9ecef;
+    transition: var(--contabilidad-transition);
+}
+
+.contabilidad-perfil-box:hover {
+    border-color: var(--contabilidad-accent);
+    transform: translateY(-5px);
+}
+
+.contabilidad-perfil-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--contabilidad-primary);
+}
+
+.contabilidad-perfil-header i {
+    font-size: 1.5rem;
+    color: var(--contabilidad-accent);
+}
+
+.contabilidad-perfil-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.contabilidad-perfil-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contabilidad-perfil-list li {
+    padding: 0.8rem 0;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.contabilidad-perfil-list li:last-child {
+    border-bottom: none;
+}
+
+.contabilidad-check {
+    color: var(--contabilidad-success);
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+/* === SIDEBAR === */
+.contabilidad-sidebar-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.contabilidad-sidebar-header {
+    background: var(--contabilidad-primary);
+    color: white;
+    padding: 1.2rem 1.5rem;
+}
+
+.contabilidad-sidebar-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.contabilidad-sidebar-content {
+    padding: 1.5rem;
+}
+
+/* Info items */
+.contabilidad-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.contabilidad-info-item:last-child {
+    border-bottom: none;
+}
+
+.contabilidad-info-icon {
+    color: var(--contabilidad-accent);
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.contabilidad-info-details {
+    flex: 1;
+}
+
+.contabilidad-info-details strong {
+    color: var(--contabilidad-primary);
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.contabilidad-info-details span {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
+}
+
+.contabilidad-info-details span:last-child {
+    margin-bottom: 0;
+}
+
+/* Campo de trabajo */
+.contabilidad-campo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contabilidad-campo-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: var(--contabilidad-transition);
+}
+
+.contabilidad-campo-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.contabilidad-campo-item i {
+    color: var(--contabilidad-accent);
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.contabilidad-campo-item span {
+    color: #555;
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+/* Puestos de trabajo */
+.contabilidad-puestos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.8rem;
+}
+
+.contabilidad-puesto-badge {
+    background: linear-gradient(135deg, #f0f8ff, #f0f0ff);
+    color: var(--contabilidad-primary);
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-align: center;
+    font-weight: 500;
+    border: 1px solid rgba(78, 84, 200, 0.2);
+    transition: var(--contabilidad-transition);
+    cursor: default;
+}
+
+.contabilidad-puesto-badge:hover {
+    background: linear-gradient(135deg, var(--contabilidad-primary), var(--contabilidad-accent));
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(44, 52, 143, 0.2);
+}
+
+/* Especializaciones */
+.contabilidad-especializaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.8rem;
+}
+
+.contabilidad-especializacion-badge {
+    background: rgba(33, 179, 149, 0.1);
+    color: var(--contabilidad-success);
+    padding: 0.5rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid rgba(33, 179, 149, 0.2);
+    transition: var(--contabilidad-transition);
+}
+
+.contabilidad-especializacion-badge:hover {
+    background: var(--contabilidad-success);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* CTA Card */
+.contabilidad-cta-card {
+    background: linear-gradient(135deg, var(--contabilidad-primary), var(--contabilidad-accent));
+    color: white;
+    text-align: center;
+}
+
+.contabilidad-cta-content {
+    padding: 2rem 1.5rem;
+}
+
+.contabilidad-cta-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.contabilidad-cta-content h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.contabilidad-cta-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.contabilidad-cta-button {
+    display: inline-block;
+    background: white;
+    color: var(--contabilidad-primary);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: var(--contabilidad-transition);
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.contabilidad-cta-button:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Plan de estudios */
+.contabilidad-plan-card {
+    background: white;
+}
+
+.contabilidad-plan-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.contabilidad-plan-content h4 {
+    color: var(--contabilidad-primary);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.contabilidad-plan-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.contabilidad-plan-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--contabilidad-primary), var(--contabilidad-success));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--contabilidad-transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.contabilidad-plan-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(44, 52, 143, 0.3);
+}
+
+/* === SECCIÓN DE HERRAMIENTAS Y TECNOLOGÍAS === */
+.contabilidad-tools-section {
+    padding: 80px 0;
+    background: var(--contabilidad-light);
+}
+
+.contabilidad-tools-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contabilidad-tools-header h2 {
+    color: var(--contabilidad-primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contabilidad-tools-header h2 i {
+    color: var(--contabilidad-accent);
+}
+
+.contabilidad-tools-header p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contabilidad-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.contabilidad-tool-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--contabilidad-transition);
+    border: 2px solid transparent;
+}
+
+.contabilidad-tool-card:hover {
+    border-color: var(--contabilidad-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.contabilidad-tool-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--contabilidad-primary), var(--contabilidad-accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.contabilidad-tool-icon i {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.contabilidad-tool-card h4 {
+    color: var(--contabilidad-primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.contabilidad-tool-card p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* === SECCIÓN DE VALORES PROFESIONALES === */
+.contabilidad-values-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.contabilidad-values-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.contabilidad-values-text h3 {
+    color: var(--contabilidad-primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contabilidad-values-text h3 i {
+    color: var(--contabilidad-accent);
+}
+
+.contabilidad-values-text p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.contabilidad-values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.contabilidad-value-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border: 2px solid #e9ecef;
+    transition: var(--contabilidad-transition);
+}
+
+.contabilidad-value-card:hover {
+    border-color: var(--contabilidad-accent);
+    transform: translateY(-5px);
+}
+
+.contabilidad-value-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--contabilidad-primary), var(--contabilidad-accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.contabilidad-value-icon i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.contabilidad-value-card h4 {
+    color: var(--contabilidad-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.contabilidad-value-card p {
+    color: #666;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.contabilidad-values-image {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.contabilidad-values-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.8s ease;
+}
+
+.contabilidad-values-image:hover img {
+    transform: scale(1.03);
+}
+
+.contabilidad-values-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(44, 52, 143, 0.8), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.contabilidad-values-overlay h4 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1200px) {
+    .contabilidad-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contabilidad-main-title {
+        font-size: 2.8rem;
+    }
+    
+    .contabilidad-title-highlight {
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .contabilidad-banner-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contabilidad-hero {
+        min-height: auto;
+        padding: 100px 0 60px;
+    }
+    
+    .contabilidad-values-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .contabilidad-values-image {
+        order: -1;
+    }
+    
+    .contabilidad-section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .contabilidad-tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .contabilidad-main-title {
+        font-size: 2rem;
+    }
+    
+    .contabilidad-title-highlight {
+        font-size: 2.2rem;
+    }
+    
+    .contabilidad-title-highlight::after {
+        width: 150px;
+    }
+    
+    .contabilidad-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .contabilidad-hero-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .contabilidad-hero-message {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .contabilidad-banner-image {
+        height: 300px;
+    }
+    
+    .contabilidad-banner-word {
+        font-size: 1.8rem;
+    }
+    
+    .contabilidad-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .contabilidad-comp-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contabilidad-perfil-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contabilidad-tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contabilidad-values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contabilidad-puestos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    
+    .contabilidad-desc-text {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contabilidad-main-title {
+        font-size: 1.6rem;
+    }
+    
+    .contabilidad-title-highlight {
+        font-size: 1.8rem;
+    }
+    
+    .contabilidad-title-line {
+        font-size: 1.2rem;
+    }
+    
+    .contabilidad-banner-image {
+        height: 250px;
+    }
+    
+    .contabilidad-banner-word {
+        font-size: 1.5rem;
+    }
+    
+    .contabilidad-section-header h2 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .contabilidad-puestos-grid,
+    .contabilidad-especializaciones-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contabilidad-card-body,
+    .contabilidad-sidebar-content {
+        padding: 1.5rem;
+    }
+    
+    .contabilidad-comp-item,
+    .contabilidad-perfil-box,
+    .contabilidad-campo-item,
+    .contabilidad-tool-card,
+    .contabilidad-value-card {
+        padding: 1.2rem;
+    }
+}
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contabilidad-hero-content,
+.contabilidad-desc-text,
+.contabilidad-card,
+.contabilidad-sidebar-card,
+.contabilidad-tool-card,
+.contabilidad-value-card {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.contabilidad-hero-content { animation-delay: 0.1s; }
+.contabilidad-desc-text { animation-delay: 0.2s; }
+.contabilidad-card:nth-child(1) { animation-delay: 0.3s; }
+.contabilidad-card:nth-child(2) { animation-delay: 0.4s; }
+.contabilidad-sidebar-card:nth-child(1) { animation-delay: 0.5s; }
+.contabilidad-sidebar-card:nth-child(2) { animation-delay: 0.6s; }
+
+/* Efecto de scroll reveal */
+.contabilidad-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.contabilidad-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

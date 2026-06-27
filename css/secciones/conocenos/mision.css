@@ -1,0 +1,616 @@
+/* ===== ESTILOS ESPECÍFICOS PARA MISIÓN Y VISIÓN ===== */
+
+/* Hero Section */
+.mision-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1a237e 100%);
+    color: var(--color-white);
+    padding: 120px 0 60px;
+    text-align: center;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mision-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%2321b395" opacity="0.1"><path d="M20,20 Q50,10 80,20 T100,50 T80,80 T50,90 T20,80 T0,50 T20,20" fill="none" stroke-width="0.5"/></svg>');
+    background-size: 300px 300px;
+}
+
+.mision-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.mision-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-white);
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mision-hero .subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+}
+
+.mision-badge {
+    display: inline-block;
+    background: var(--color-secondary);
+    color: var(--color-white);
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Sección Principal */
+.mision-main {
+    padding: 60px 0;
+    background: var(--color-light);
+}
+
+.mision-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+/* Imagen de la Universidad */
+.universidad-imagen {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.imagen-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    height: 400px;
+}
+
+.imagen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.imagen-container:hover img {
+    transform: scale(1.05);
+}
+
+.imagen-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: var(--color-white);
+    padding: 2rem;
+    text-align: center;
+}
+
+.imagen-overlay h3 {
+    font-size: 1.8rem;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Tarjeta de Misión */
+.mision-card {
+    background: var(--color-white);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    border-top: 6px solid var(--color-primary);
+}
+
+.mision-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, transparent 70%);
+    opacity: 0.1;
+}
+
+.mision-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.mision-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--color-primary), #1a237e);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+.mision-header h2 {
+    color: var(--color-primary);
+    font-size: 2rem;
+    margin: 0;
+    flex: 1;
+}
+
+.mision-line {
+    flex: 1;
+    height: 3px;
+    background: linear-gradient(to right, var(--color-primary), transparent);
+}
+
+.mision-content {
+    position: relative;
+    z-index: 2;
+}
+
+.mision-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-dark);
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.mision-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--color-light);
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--color-light);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.highlight-item:hover {
+    transform: translateX(10px);
+    background: linear-gradient(135deg, var(--color-light), #e8f4f8);
+}
+
+.highlight-item i {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    width: 40px;
+    text-align: center;
+}
+
+.highlight-item span {
+    color: var(--color-dark);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* Tarjeta de Visión */
+.vision-card {
+    background: var(--color-white);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    border-top: 6px solid var(--color-secondary);
+}
+
+.vision-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, var(--color-secondary) 0%, transparent 70%);
+    opacity: 0.1;
+}
+
+.vision-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.vision-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--color-secondary), #20c997);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+.vision-header h2 {
+    color: var(--color-secondary);
+    font-size: 2rem;
+    margin: 0;
+    flex: 1;
+}
+
+.vision-line {
+    flex: 1;
+    height: 3px;
+    background: linear-gradient(to right, var(--color-secondary), transparent);
+}
+
+.vision-content {
+    position: relative;
+    z-index: 2;
+}
+
+.vision-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-dark);
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.vision-aspectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--color-light);
+}
+
+.aspecto {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--color-light);
+    border-radius: 15px;
+    transition: var(--transition);
+}
+
+.aspecto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.aspecto h4 {
+    color: var(--color-secondary);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.aspecto p {
+    color: var(--color-gray);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Tarjeta de Valores */
+.valores-card {
+    background: var(--color-white);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    border-top: 6px solid #ff6b6b;
+}
+
+.valores-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,107,107,0.1) 0%, transparent 70%);
+}
+
+.valores-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.valores-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+.valores-header h2 {
+    color: #ff6b6b;
+    font-size: 2rem;
+    margin: 0;
+    flex: 1;
+}
+
+.valores-line {
+    flex: 1;
+    height: 3px;
+    background: linear-gradient(to right, #ff6b6b, transparent);
+}
+
+.valores-intro {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-gray);
+    margin-bottom: 3rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.valor-item {
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid var(--color-light);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.valor-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-secondary);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.valor-symbol {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--color-white);
+    font-size: 1.5rem;
+}
+
+.valor-item h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.valor-item p {
+    color: var(--color-gray);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Tarjeta de Compromiso */
+.compromiso-card {
+    background: linear-gradient(135deg, var(--color-primary), #1a237e);
+    border-radius: 20px;
+    padding: 4rem 3rem;
+    color: var(--color-white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.compromiso-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%2321b395" opacity="0.1"><circle cx="30" cy="30" r="5"/><circle cx="70" cy="70" r="8"/><circle cx="20" cy="80" r="4"/></svg>');
+    background-size: 200px 200px;
+}
+
+.compromiso-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.compromiso-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-white);
+}
+
+.compromiso-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+}
+
+.compromiso-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .mision-card,
+    .vision-card,
+    .valores-card {
+        padding: 2.5rem;
+    }
+    
+    .valores-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .mision-hero {
+        padding: 100px 0 40px;
+    }
+    
+    .mision-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .mision-hero .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .imagen-container {
+        height: 300px;
+    }
+    
+    .imagen-overlay h3 {
+        font-size: 1.5rem;
+    }
+    
+    .mision-header,
+    .vision-header,
+    .valores-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .mision-line,
+    .vision-line,
+    .valores-line {
+        display: none;
+    }
+    
+    .mision-icon,
+    .vision-icon,
+    .valores-icon {
+        margin: 0 auto;
+    }
+    
+    .mision-highlights {
+        grid-template-columns: 1fr;
+    }
+    
+    .vision-aspectos {
+        grid-template-columns: 1fr;
+    }
+    
+    .valores-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .compromiso-card {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mision-hero h1 {
+        font-size: 1.7rem;
+    }
+    
+    .mision-badge {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.5rem;
+    }
+    
+    .imagen-container {
+        height: 250px;
+    }
+    
+    .mision-card,
+    .vision-card,
+    .valores-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .valor-item {
+        padding: 1.2rem;
+    }
+    
+    .valor-symbol {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .compromiso-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
